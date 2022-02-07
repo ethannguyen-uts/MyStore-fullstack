@@ -7,8 +7,8 @@ const app: express.Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = 3000;
-const address = `0.0.0.0:${port}`;
+const port = process.env.PORT || 3000;
+const address = process.env.ORIGIN || `localhost:${port}`;
 
 productRoutes(app);
 
