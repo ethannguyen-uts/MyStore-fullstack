@@ -13,7 +13,7 @@ const address = process.env.ORIGIN || `localhost:${port}`;
 productRoutes(app);
 
 app.get('/', (req: Request, res: Response) => {
-  res.json(process.env.ORGIN);
+  res.json(process.env.ORIGIN);
 });
 
 app.listen(port, () => {
