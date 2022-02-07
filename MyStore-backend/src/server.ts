@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 productRoutes(app);
 
 app.get('/', (req: Request, res: Response) => {
-  res.json(process.env.ORIGIN);
+  res.json('Welcome to API backend server for my store!');
 });
 
 app.listen(port, () => {
