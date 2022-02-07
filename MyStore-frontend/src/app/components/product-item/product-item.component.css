@@ -1,0 +1,28 @@
+.image-container {
+  flex: auto;
+  padding: 20px;
+  margin: 6px 6px;
+  border: 1px solid #33b5e5;
+  cursor: pointer;
+}
+.image-container img {
+  display: flex;
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
+}
+.product-container {
+  margin-top: 64px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px 20px 0 20px;
+}
+.select-input {
+  margin-bottom: 10px;
+}
+input {
+  width: 50px;
+}

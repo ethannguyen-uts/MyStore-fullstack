@@ -1,0 +1,108 @@
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.image-container {
+  display: flex;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  border-width: 10px;
+}
+
+.cart-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 64px;
+}
+
+.list-cart-item {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  overflow-y: auto;
+  border-width: 1px;
+  border-color: lightblue;
+  border-style: solid;
+}
+
+.form {
+  display: flex;
+  flex-flow: wrap column;
+  width: 250px;
+
+  justify-content: flex-start;
+}
+.form-margin {
+  margin: 0 20px;
+}
+.form label {
+  margin-bottom: 6px;
+}
+.form input {
+  padding: 2px;
+}
+
+.form button {
+}
+
+.placeholder {
+  color: darkgray;
+  font-size: 13px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.cart-item-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 40px;
+}
+.cart-item-details label {
+  margin-bottom: 10px;
+}
+
+.cart-item-details input {
+  width: 50px;
+}
+
+.number-input {
+  width: 80px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.cart-panel {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.empty-cart-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+.total {
+  margin: 20px 20px;
+  font-size: 20px;
+  font-family: serif;
+  border-bottom: 1px black solid;
+  align-self: center;
+}
+
+.errorMessage {
+  color: rgb(238, 90, 90);
+  font-size: 13px;
+}

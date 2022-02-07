@@ -1,0 +1,25 @@
+img {
+  border-radius: 10px;
+  width: 320px;
+}
+
+.select-input {
+  width: 70px;
+  margin-bottom: 8px;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.detail-item {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.back-link {
+  margin-top: 8px;
+}

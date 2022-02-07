@@ -1,0 +1,39 @@
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: left;
+  background: #33b5e5;
+  padding: 15px 0px;
+  background-color: cornflowerblue;
+  position: fixed;
+  z-index: 100;
+  width: 100% !important;
+  margin: 0;
+  justify-content: center;
+}
+
+.cart-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.cart-link {
+  color: #ffffff;
+  font-weight: bold;
+  align-items: center;
+  margin-left: 10px;
+}
+.badge {
+  display: flex;
+  background-color: #ffc107;
+  color: #fff;
+  font-weight: bold;
+  font-size: 80%;
+  border-radius: 3px;
+  min-width: 2.6em;
+  padding: 0.2em;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 2px;
+}
