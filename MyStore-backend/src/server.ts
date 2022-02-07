@@ -7,8 +7,7 @@ const app: express.Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT || 3000;
-const address = process.env.ORIGIN || `localhost:${port}`;
+const port = process.env.PORT || 8080;
 
 productRoutes(app);
 
@@ -17,7 +16,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening on port: ${address}`);
+  console.log(`Server is listening on port: ${port}`);
 });
 
 export default app;
