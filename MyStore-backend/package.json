@@ -9,7 +9,7 @@
     "lint-fix": "eslint 'src/**/*.{ts, tsx}' --fix",
     "build": "npx tsc",
     "test": "npm run build && export ENV=test && db-migrate up --env test && jasmine && db-migrate reset --env test",
-    "start": "nodemon dist/server.js",
+    "start": "node dist/server.js",
     "deploy": "chmod +x ./bin/deploy.sh ./bin/deploy.sh"
   },
   "keywords": [],

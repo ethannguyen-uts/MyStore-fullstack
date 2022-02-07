@@ -7,7 +7,7 @@ const app: express.Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT || 8080;
+const port = 8080;
 
 productRoutes(app);
 
