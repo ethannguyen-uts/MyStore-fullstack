@@ -3,6 +3,7 @@
     "frontend:install": "cd MyStore-frontend && npm install",
     "backend:install": "cd MyStore-backend && npm install",
     "frontend:build": "cd MyStore-frontend && npm run build",
-    "backend:build": "cd MyStore-backend && npm run build"
+    "backend:build": "cd MyStore-backend && npm run build",
+    "backend:deploy": "cd MyStore-backend && npm run deploy"
   }
 }
