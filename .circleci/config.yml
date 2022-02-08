@@ -39,4 +39,5 @@ jobs:
       - run:
           name: deploy backend
           command: |
+            eb use MyApp-prod-env
             npm run backend:deploy
