@@ -11,7 +11,7 @@
     "dist": "sh ./bin/dist.sh",
     "test": "npm run build && export ENV=test && db-migrate up --env test && jasmine && db-migrate reset --env test",
     "start": "node dist/server.js",
-    "deploy": "npm run dist && chmod +x ./bin/deploy.sh ./bin/deploy.sh"
+    "deploy": "chmod +x ./bin/deploy.sh ./bin/deploy.sh"
   },
   "keywords": [],
   "author": "",
