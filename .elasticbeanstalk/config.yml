@@ -1,0 +1,5 @@
+branch-defaults:
+  main:
+    environment: MyApp-prod-env
+global:
+  profile: eb-cli
