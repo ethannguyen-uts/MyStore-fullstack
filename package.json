@@ -2,9 +2,8 @@
   "scripts": {
     "frontend:install": "cd MyStore-frontend && npm install",
     "backend:install": "cd MyStore-backend && npm install",
-    "frontend:build": "cd MyStore-frontend && npm run build",
+    "frontend:build": "cd MyStore-frontend && npm run build-production",
     "backend:build": "cd MyStore-backend && npm run build",
-    "frontend:test": "cd MyStore-frontend && npm run test",
     "backend:deploy": "cd MyStore-backend && npm run dist && npm run deploy",
     "frontend:deploy": "cd MyStore-frontend && npm run deploy"
   }
