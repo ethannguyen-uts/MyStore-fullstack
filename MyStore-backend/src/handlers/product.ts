@@ -10,8 +10,8 @@ const index = async (_req: Request, res: Response): Promise<void> => {
   } catch (err) {
     if (err instanceof Error) {
       res.status(400);
-      res.send(err.message);
-    } else throw err;
+      res.json(err.message);
+    } else res.send(err);
   }
 };
 
@@ -30,7 +30,7 @@ const create = async (req: Request, res: Response): Promise<void> => {
   } catch (err) {
     if (err instanceof Error) {
       res.status(400);
-      res.send(err.message);
+      res.json(err.message);
     } else throw err;
   }
 };

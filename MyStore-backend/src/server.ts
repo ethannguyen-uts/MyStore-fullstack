@@ -12,7 +12,11 @@ const port = 8080;
 productRoutes(app);
 
 app.get('/', (req: Request, res: Response) => {
-  res.json('Welcome to API backend server for my store!');
+  try {
+    res.json('Welcome to API backend server for my store!');
+  } catch (err) {
+    throw err;
+  }
 });
 
 app.listen(port, () => {

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  title: 'Production environment',\n  apiURL: 'http://myapp-prod-env.eba-jm5ipfid.us-west-2.elasticbeanstalk.com'\n};","map":null,"metadata":{},"sourceType":"module"}

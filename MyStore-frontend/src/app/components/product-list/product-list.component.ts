@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
   }
   getProducts = () => {
     this.productService.getProducts().subscribe((res: Product[]) => {
+      console.log(res);
       //res.map((product: Product) => (product.quantity = 1));
       this.productList = res;
       this.productService.setProductList(res);
