@@ -35,16 +35,6 @@ jobs:
           name: build backend
           command: |
             npm run backend:build
-  #test
-  test:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/base:stable"
-    steps:
-      - run:
-          name: test frontend
-          command: |
-            npm run frontend:test
   #deploy
   deploy:
     docker:
@@ -64,9 +54,6 @@ workflows:
   build_test_and_deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
       - deploy:
           requires:
-            - test
+            - build
