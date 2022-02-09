@@ -6,7 +6,7 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@1.0.0
   # different jobs are calles later in the workflows sections
 jobs:
-  build_test_and_deploy:
+  build:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
@@ -50,7 +50,3 @@ jobs:
           name: deploy frontend
           command: |
             npm run frontend:deploy
-workflows:
-  - build_test_and_deploy:
-      jobs:
-        - build_test_and_deploy
