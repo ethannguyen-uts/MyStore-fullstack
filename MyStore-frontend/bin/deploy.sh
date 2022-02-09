@@ -1,0 +1,1 @@
+aws s3 cp --recursive ./dist/my-store s3://mystore-frontend-bucket/

@@ -11,7 +11,7 @@ const index = async (_req: Request, res: Response): Promise<void> => {
     if (err instanceof Error) {
       res.status(400);
       res.json(err.message);
-    } else res.send(err);
+    } else throw err;
   }
 };
 
