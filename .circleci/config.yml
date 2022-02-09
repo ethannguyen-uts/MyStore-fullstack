@@ -50,3 +50,5 @@ jobs:
           name: deploy frontend
           command: |
             npm run frontend:deploy
+workflows:
+  - build_test_and_deploy
