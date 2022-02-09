@@ -5,68 +5,57 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.6
   eb: circleci/aws-elastic-beanstalk@1.0.0
   # different jobs are calles later in the workflows sections
-jobs:
-  build:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/base:stable"
-    steps:
-      - node/install:
-          install-yarn: true
-          node-version: "16.13"
-      - aws-cli/setup
-      - eb/setup
-      - checkout
-      # install dependencies in both apps
-      - run:
-          name: install frontend dependencies
-          command: |
-            npm run frontend:install
-      - run:
-          name: install backend dependencies
-          command: |
-            npm run backend:install
-      #build both application
-      - run:
-          name: build frontend
-          command: |
-            npm run frontend:build
-      - run:
-          name: build backend
-          command: |
-            npm run backend:build
-  #test
-  test:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/base:stable"
-    steps:
-      - run:
-          name: test frontend
-          command: |
-            npm run frontend:test
-  #deploy
-  deploy:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: "cimg/base:stable"
-    steps:
-      - run:
-          name: deploy backend
-          command: |
-            npm run backend:deploy
-      #deploy frontend
-      - run:
-          name: deploy frontend
-          command: |
-            npm run frontend:deploy
 workflows:
   build_test_and_deploy:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - deploy:
-          requires:
-            - test
+      build:
+        docker:
+          # the base image can run most needed actions with orbs
+          - image: "cimg/base:stable"
+        steps:
+          - node/install:
+              install-yarn: true
+              node-version: "16.13"
+          - aws-cli/setup
+          - eb/setup
+          - checkout
+          # install dependencies in both apps
+          - run:
+              name: install frontend dependencies
+              command: |
+                npm run frontend:install
+          - run:
+              name: install backend dependencies
+              command: npm run backend:install
+          #build both application
+          - run:
+              name: build frontend
+              command: |
+                npm run frontend:build
+          - run:
+              name: build backend
+              command: |
+                npm run backend:build
+      #test
+      test:
+        requires:
+          - build
+        steps:
+          - run:
+              name: test frontend
+              command: |
+                npm run frontend:test
+      #deploy
+      deploy:
+        requires:
+          - test
+        steps:
+          - run:
+              name: deploy backend
+              command: |
+                npm run backend:deploy
+          #deploy frontend
+          - run:
+              name: deploy frontend
+              command: |
+                npm run frontend:deploy
