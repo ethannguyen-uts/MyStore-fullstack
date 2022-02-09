@@ -16,6 +16,7 @@ export class ProductStore {
       const sql =
         'SELECT id, name, price, quantity, description, url FROM products ORDER BY id;';
       const results = await conn.query(sql);
+      conn.release();
       return results.rows;
     } catch (err) {
       if (err instanceof Error) throw new Error(err.message);
@@ -35,6 +36,7 @@ export class ProductStore {
         product.description,
         product.url,
       ]);
+      conn.release();
       const data: Product = results.rows[0];
       return data;
     } catch (err) {

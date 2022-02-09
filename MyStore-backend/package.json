@@ -10,6 +10,7 @@
     "build": "npx tsc",
     "dist": "sh ./bin/dist.sh",
     "test": "npm run build && export ENV=test && db-migrate up --env test && jasmine && db-migrate reset --env test",
+    "dev": "npm run build && node dist/server.js",
     "start": "node dist/server.js",
     "deploy": "sh ./bin/deploy.sh"
   },
