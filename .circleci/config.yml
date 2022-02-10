@@ -4,6 +4,7 @@ orbs:
   node: circleci/node@5.0.0
   aws-cli: circleci/aws-cli@2.0.6
   eb: circleci/aws-elastic-beanstalk@1.0.0
+  browser-tools: circleci/browser-tools@1.2.2
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
           node-version: "16.13"
       - aws-cli/setup
       - eb/setup
+      - browser-tools/install-chrome
       - checkout
       # install dependencies in both apps
       - run:
