@@ -1,6 +1,6 @@
 ## INFRASTRUCTURE
 
-#### Details
+#### Description
 
 The full stack application includes:
 
@@ -8,7 +8,7 @@ The full stack application includes:
 2. Backend Server: A Node Express API is hosted on AWS ElasticBeanstalk.
 3. Frontend: An Angular Web App is hosted on AWS S3 Bucket.
 
-Pipeline: The fullstack is deployed using CircleCI Pipeline Serice
+The fullstack application is deployed using CircleCI Pipeline Serice.
 
 #### Architecture Diagram
 

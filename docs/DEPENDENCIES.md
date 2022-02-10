@@ -9,7 +9,7 @@
     "pg": "^8.7.3"
 ```
 
-### Frontend::
+### Frontend:
 
 ```
     "@angular/animations": "~13.2.0",
