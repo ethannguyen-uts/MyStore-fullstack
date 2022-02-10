@@ -10,7 +10,7 @@ In this particular project, we choose CircleCI as the CI/CD Software. Before the
 4. Environment variables (secrets) are configured inside CircleCI and will be passed to the production application:
    <img src="./EnvironmentVariablesCircleCI.png">
 
-The pipeline process details are described in [.circleci/config.yml](../.circleci/circleci.config.yml)
+The pipeline process details are described in [.circleci/config.yml](../.circleci/config.yml)
 
 #### Pipeline Diagram
 
