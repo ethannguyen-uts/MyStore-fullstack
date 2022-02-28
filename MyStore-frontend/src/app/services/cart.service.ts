@@ -83,12 +83,13 @@ export class CartService {
     return this.listProduct;
   };
 
-  refreshCart = (): void => {
+  refreshCart = (): Product[] => {
     this.listProduct = [];
     this.total = 0;
     this.totalQuantity = 0;
     this.status = CART_STATUS.active;
     this.quantityObservable.next(this.totalQuantity);
+    return [];
   };
 
   //Calculation
