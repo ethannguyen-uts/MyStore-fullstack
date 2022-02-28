@@ -1,4 +1,9 @@
-<div class="products-container">
+<div *ngIf="isLoading === true" class="loader-container">
+  Loading product list
+  <app-loader></app-loader>
+</div>
+
+<div *ngIf="isLoading === false" class="products-container">
   <app-product-item
     *ngFor="let product of productList"
     [product]="product"

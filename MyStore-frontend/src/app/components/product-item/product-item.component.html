@@ -1,10 +1,10 @@
 <div class="product-container">
-  <div routerLink="products/{{ product.name }}" class="image-container">
+  <div routerLink="{{ product.name }}" class="image-container">
     <img src="{{ product.url }}" />
   </div>
-  <label>{{ product.name }}</label>
+  <label class="product-name">{{ product.name }}</label>
   <br />
-  <label>${{ product.price }}</label>
+  <label class="product-price">${{ product.price }}</label>
   <br />
   <select
     class="select-input"
@@ -15,7 +15,7 @@
       {{ option }}
     </option>
   </select>
-  <button class="btn btn-primary" (click)="add(selectedQuantity, product)">
-    Add to cart
+  <button class="btn btn-add" (click)="add(selectedQuantity, product)">
+    ADD
   </button>
 </div>

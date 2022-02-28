@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
+  isLoading: boolean = false;
   productList: Product[] = [];
   constructor(
     private productService: ProductService,
@@ -19,15 +20,14 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
   getProducts = () => {
+    this.isLoading = true;
     this.productService.getProducts().subscribe((res: Product[]) => {
-      console.log(res);
-      //res.map((product: Product) => (product.quantity = 1));
       this.productList = res;
       this.productService.setProductList(res);
     });
+    this.isLoading = false;
   };
   addToCart = (data: { quantity: number; product: Product }) => {
     this.cartService.addToCart(data.quantity, data.product);
-    alert(`${data.quantity} ${data.product.name} has been added to cart!`);
   };
 }

@@ -1,8 +1,23 @@
 <div class="navigation">
-  <div><a class="cart-link" routerLink="/">Product List</a></div>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/products" routerLinkActive="active-link">Store</a>
+        </li>
 
-  <div class="cart-container">
-    <a class="cart-link" routerLink="/cart">Cart</a>
-    <span routerLink="/cart" class="badge">{{ total }}</span>
-  </div>
+        <li>
+          <div class="cart-container">
+            <a routerLink="/cart" routerLinkActive="active-link"
+              ><img
+                class="cart-icon"
+                src="assets/img/cartIcon.svg"
+                alt="not found"
+            /></a>
+            <span routerLink="/cart" class="{{ badgeClass }}">{{ total }}</span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </div>

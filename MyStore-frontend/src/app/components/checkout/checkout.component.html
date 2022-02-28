@@ -1,0 +1,118 @@
+<div class="wrapper">
+  <form #form="ngForm" (ngSubmit)="onSubmit()" class="form form-margin">
+    <div class="header">
+      <header>
+        <h2 class="checkout-header">Checkout</h2>
+      </header>
+    </div>
+
+    <h3>Customer information</h3>
+    <label> <span class="required">*</span> Customer name </label>
+    <input
+      type="text"
+      name="fullName"
+      placeholder="(minimum 3 characters)"
+      required
+      minlength="3"
+      [(ngModel)]="user.fullName"
+      #nameInput="ngModel"
+    />
+
+    <div *ngIf="nameInput.invalid && nameInput.dirty">
+      <div *ngIf="nameInput.errors?.required">
+        <span class="errorMessage">Please enter user full name!</span>
+      </div>
+      <div *ngIf="nameInput.errors?.['minlength']">
+        <span class="errorMessage"
+          >User full name must be at least 3 characters!</span
+        >
+      </div>
+    </div>
+
+    <label><span class="required">*</span> Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="(enter your email address)"
+      email
+      [(ngModel)]="user.email"
+      #emailInput="ngModel"
+    />
+    <div *ngIf="emailInput.invalid && emailInput.dirty">
+      <span *ngIf="emailInput.errors?.['required']" class="errorMessage"
+        >Please input your email address</span
+      >
+      <span *ngIf="emailInput.errors?.['email']" class="errorMessage"
+        >Please enter valid email address</span
+      >
+    </div>
+
+    <label><span class="required">* </span>Address Line 1</label>
+    <input
+      type="text"
+      name="address"
+      placeholder="(minimum 6 characters)"
+      required
+      minlength="6"
+      [(ngModel)]="user.address"
+      #addressInput="ngModel"
+    />
+    <div *ngIf="addressInput.invalid && addressInput.dirty">
+      <div *ngIf="addressInput.errors?.required">
+        <span class="errorMessage">Please enter user's address!</span>
+      </div>
+      <div *ngIf="addressInput.errors?.['minlength']">
+        <span class="errorMessage"
+          >User's address must be at least 6 characters!</span
+        >
+      </div>
+    </div>
+
+    <label> &nbsp; Your city</label>
+    <input
+      type="text"
+      name="City"
+      placeholder="(your city)"
+      [(ngModel)]="user.city"
+      #cityInput="ngModel"
+    />
+
+    <label><span class="required">*</span> Credit card number</label>
+    <input
+      type="text"
+      name="creditCardNumber"
+      style="text-transform: uppercase"
+      placeholder="(minimum 12 characters)"
+      required
+      minlength="12"
+      [(ngModel)]="user.creditCardNumber"
+      #creditCardInput="ngModel"
+    />
+    <div *ngIf="creditCardInput.invalid && creditCardInput.dirty">
+      <div *ngIf="creditCardInput.errors?.required">
+        <span class="errorMessage">Please enter your credit card number!</span>
+      </div>
+      <div *ngIf="creditCardInput.errors?.['minlength']">
+        <span class="errorMessage"
+          >Credit card number must be at least 12 characters!</span
+        >
+      </div>
+    </div>
+
+    <span class="placeholder"
+      >We'll never share your details with anyone else.</span
+    >
+    <div class="footer">
+      <footer>
+        <a routerLink="/cart" class="btn btn-back">Back to Cart</a>
+        <input
+          class="btn btn-add button"
+          type="submit"
+          [disabled]="form.invalid"
+          value="Next"
+        />
+      </footer>
+    </div>
+  </form>
+</div>

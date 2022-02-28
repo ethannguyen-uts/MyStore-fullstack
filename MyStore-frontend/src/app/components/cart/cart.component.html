@@ -1,106 +1,42 @@
-<div class="cart-container">
-  <div *ngIf="total == 0">
+<div class="wrapper">
+  <div class="cart-empty-container" *ngIf="total == 0">
     <label>Oops, Your cart is empty!</label>
-    <a routerLink="/">Back to shopping</a>
+    <button class="btn btn-back" routerLink="/">Back to shopping</button>
   </div>
-  <div *ngIf="total !== 0" class="list-cart-item">
-    <div *ngFor="let product of listProduct" class="cart-item">
-      <div routerLink="/products/{{ product.name }}" class="image-container">
-        <img src="{{ product.url }}" />
-      </div>
-      <div class="cart-item-details">
-        <label>{{ product.name }}</label>
+  <div *ngIf="total !== 0" class="cart-container">
+    <div class="header">
+      <h3>Shopping cart</h3>
+      <h5 (click)="removeAll()" class="remove"><u>Empty Cart</u></h5>
+    </div>
+    <div *ngIf="total !== 0" class="list-cart-item">
+      <div *ngFor="let product of listProduct" class="cart-item">
+        <div routerLink="/products/{{ product.name }}" class="image-container">
+          <img src="{{ product.url }}" />
+        </div>
 
-        <label>${{ product.price }}</label>
-        <input
-          class="number-input"
-          [(ngModel)]="product.quantity"
-          type="number"
-          name="Amount"
-          value="{{ product.quantity }}"
-          (ngModelChange)="cartItemUpdate(product)"
-        />
-        <button class="btn btn-delete" (click)="removeProduct(product)">
-          Remove
-        </button>
+        <span class="product-name">{{ product.name }}</span>
+
+        <div class="item-quantity">
+          <input
+            class="number-input"
+            [(ngModel)]="product.quantity"
+            type="number"
+            name="Amount"
+            value="{{ product.quantity }}"
+            (ngModelChange)="cartItemUpdate(product)"
+          />
+        </div>
+        <div class="prices product-price">
+          <h4 class="flexend">${{ product.price }}</h4>
+          <label class="flexend remove" (click)="removeProduct(product)">
+            <u> Remove</u>
+          </label>
+        </div>
       </div>
+    </div>
+    <div class="footer">
+      <h3 class="subtotal">Sub-total: ${{ total }}</h3>
+      <button class="btn btn-add" (click)="onCheckout()">Checkout</button>
     </div>
   </div>
-
-  <form
-    #form="ngForm"
-    (ngSubmit)="onSubmit()"
-    *ngIf="total !== 0"
-    class="form form-margin"
-  >
-    <h3 class="total">Amount: ${{ total }}</h3>
-    <h3>Customer Information</h3>
-    <label>Full name</label>
-    <input
-      type="text"
-      name="fullName"
-      placeholder="(minimum 3 characters)"
-      required
-      minlength="3"
-      [(ngModel)]="user.fullName"
-      #nameInput="ngModel"
-    />
-
-    <div *ngIf="nameInput.invalid && nameInput.dirty">
-      <div *ngIf="nameInput.errors?.required">
-        <span class="errorMessage">Please enter user full name!</span>
-      </div>
-      <div *ngIf="nameInput.errors?.['minlength']">
-        <span class="errorMessage"
-          >User full name must be at least 3 characters!</span
-        >
-      </div>
-    </div>
-
-    <label>Address</label>
-    <input
-      type="text"
-      name="address"
-      placeholder="(minimum 6 characters)"
-      required
-      minlength="6"
-      [(ngModel)]="user.address"
-      #addressInput="ngModel"
-    />
-    <div *ngIf="addressInput.invalid && addressInput.dirty">
-      <div *ngIf="addressInput.errors?.required">
-        <span class="errorMessage">Please enter user's address!</span>
-      </div>
-      <div *ngIf="addressInput.errors?.['minlength']">
-        <span class="errorMessage"
-          >User's address must be at least 6 characters!</span
-        >
-      </div>
-    </div>
-    <label>Credit Card Number</label>
-    <input
-      type="text"
-      name="creditCartNumber"
-      style="text-transform: uppercase"
-      placeholder="(16-digit number)"
-      required
-      minlength="16"
-      [(ngModel)]="user.creditCardNumber"
-      #creditCartInput="ngModel"
-    />
-    <div *ngIf="creditCartInput.invalid && creditCartInput.dirty">
-      <div *ngIf="creditCartInput.errors?.required">
-        <span class="errorMessage">Please enter credit card numbers!</span>
-      </div>
-      <div *ngIf="creditCartInput.errors?.['minlength']">
-        <span class="errorMessage"
-          >Credit card number must be at least 16 characters!</span
-        >
-      </div>
-    </div>
-    <span class="placeholder"
-      >We'll never share your payment details with anyone else</span
-    >
-    <input type="submit" [disabled]="form.invalid" value="Submit" />
-  </form>
 </div>

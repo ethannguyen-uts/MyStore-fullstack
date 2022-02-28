@@ -1,8 +1,11 @@
 .confirmation-container {
   display: flex;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 8%;
+  margin-top: 50px;
+  height: 95vh;
+  background-color: WHITE;
 }
 
 .confirmation-items {

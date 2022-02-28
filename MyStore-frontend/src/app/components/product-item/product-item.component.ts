@@ -5,6 +5,13 @@ import { Product } from 'src/app/models/product';
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css'],
+  styles: [
+    `
+      :host {
+        flex-basis: 25%;
+      }
+    `,
+  ],
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product = new Product();

@@ -1,11 +1,11 @@
 <div class="detail-container">
-  <div class="detail-item">
+  <div class="image-container">
     <img src="{{ product.url }}" />
   </div>
   <div class="detail-item">
-    <h3>{{ product.name }}</h3>
+    <h3 class="product-name">{{ product.name }}</h3>
     <br />
-    <label> ${{ product.price }}</label>
+    <label class="product-price"> ${{ product.price }}</label>
     <br />
     <label> {{ product.description }}</label>
     <br />
@@ -15,11 +15,8 @@
       </option>
     </select>
     <br />
-    <button
-      class="btn btn-primary"
-      (click)="addToCart(selectedQuantity, product)"
-    >
-      Add to cart
+    <button class="btn btn-add" (click)="addToCart(selectedQuantity, product)">
+      ADD
     </button>
     <br />
     <a routerLink="/"> Back to product list</a>

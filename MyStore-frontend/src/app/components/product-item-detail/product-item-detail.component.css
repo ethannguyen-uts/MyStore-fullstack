@@ -1,6 +1,22 @@
-img {
-  border-radius: 10px;
-  width: 320px;
+.detail-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0px 0px;
+  background-color: #fff;
+  height: 90vh;
+}
+
+.image-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 70%;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 .select-input {
@@ -8,18 +24,24 @@ img {
   margin-bottom: 8px;
 }
 
-.detail-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 64px;
-}
-
 .detail-item {
-  margin-left: 64px;
-  margin-right: 64px;
+  margin: 10px 64px;
 }
 
 .back-link {
   margin-top: 8px;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media (min-width: 600px) {
+  .detail-container {
+    justify-content: center;
+  }
+  .image-container {
+    flex-basis: 30%;
+  }
 }

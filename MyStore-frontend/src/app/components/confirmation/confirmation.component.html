@@ -1,7 +1,6 @@
 <div class="confirmation-container">
-  <div class="confirmation-header"></div>
+  <h2 class="confirmation-header confirmation-item">Congratulations!</h2>
   <div class="confirmation-items">
-    <h2 class="confirmation-header confirmation-item">Congratulations!</h2>
     <label class="confirmation-item">Thank you, {{ user.fullName }}!</label>
     <label class="confirmation-item"
       >Your order ${{ total }} is confirmed!</label
@@ -9,6 +8,6 @@
     <label class="confirmation-item"
       >Please allow 1-3 business day(s) for shipping</label
     >
-    <button routerLink="/" class="btn btn-primary">Back to product list</button>
+    <button routerLink="/" class="btn btn-back">Back to product list</button>
   </div>
 </div>
